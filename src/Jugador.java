@@ -30,7 +30,7 @@ public class Jugador {
         return isHuman;
     }
 
-    public Jugador(String nombre, int pTurno, int pTotal, boolean isHuman) {
+    public Jugador(String nombre, boolean isHuman) {
         this.nombre = nombre;
         this.pTurno = 0;
         this.pTotal = 0;
