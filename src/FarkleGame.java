@@ -44,6 +44,26 @@ public class FarkleGame {
         return Calculadora.evaluarTiro(seleccionados);
         }
 
+    public void siguienteTurno() {
+        getJugadorActual().retryTurn();
+        turnNow = (turnNow+ 1) % jugadores.size();
+
+        // Resetear y deseleccionar dados usando lambda
+        dadosMatch.forEach(d -> {
+            d.setSeleccionado(false);
+            d.lanzar();
+        });
+    }
+    //(Uso de Lambda para el reporte)
+    public void ordenarJugadoresPorPuntaje() {
+        jugadores.sort((j1, j2) -> Integer.compare(j2.getpTotal(), j1.getpTotal()));
+    }
+
 
     }
+
+
+
+
+
 
